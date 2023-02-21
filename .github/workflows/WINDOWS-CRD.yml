@@ -1,4 +1,4 @@
-# Credits By gettoVDS
+# Credits By efe
 
 name: Cl by getto
 
@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
     inputs:
       authcode:
-        description: 'CRD Kodunuzu Giriniz'
+        description: 'Type CRD Code'
         required: true
       pincode:
-        description: '6 Haneli Pin Kodunuz'
+        description: 'Set Pin'
         required: true
   
 jobs:
@@ -18,9 +18,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Kurulum Başlatılıyor
+    - name: CRD Setupping
       run: ./main.ps1
-    - name: CRD Başlatılıyor
+    - name: CRD Starting
       run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
-    - name: Aktif Tut
+    - name: Keep Alive
       run: ./timeout.ps1
