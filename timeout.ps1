@@ -1,4 +1,4 @@
-# Credits By gettoVDS
+# Credits By efe
 $i = 99999
 do {
     Write-Host $i
